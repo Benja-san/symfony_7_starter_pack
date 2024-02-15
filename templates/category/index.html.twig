@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All categories{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>All categories</h1>
+
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="{{ path('app_category_show', {slug: category.slug  }) }}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
